@@ -1,30 +1,20 @@
 package com.example.school_management.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Data
 @Entity
-@Table(name="Student")
-
+@Table(name = "Student")
 public class Student {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.UUID)
-	
-	private String id;
-    @Column(name="name")
-	private String name;
-    @Column(name="city")
-	private String city;
-	
-@ManyToOne 
-private School school;
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    @Column(name = "Id")
+    private String id;
+    @Column(name = "name")
+    private String name;
+    @Column(name = "city")
+    private String city;
+    @ManyToOne
+    private School school;
 }

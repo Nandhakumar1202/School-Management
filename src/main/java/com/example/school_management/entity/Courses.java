@@ -6,19 +6,15 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "courses")
-
 public class Courses {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.UUID)
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    @Column(name = "Id")
     private String id;
-	
-	@Column(name = "subject name")
-	private String subjectName;
-
-	@ManyToOne
-	private School school;
-	@ManyToOne
-	private Tutor tutor;
-
+    @Column(name = "subject name")
+    private String subjectName;
+    @ManyToOne
+    private School school;
+    @ManyToOne
+    private Tutor tutor;
 }
